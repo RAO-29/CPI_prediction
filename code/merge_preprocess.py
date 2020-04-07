@@ -12,7 +12,7 @@ logger.addHandler(StreamHandler())
 logger.setLevel(INFO)
 
 
-def install(
+def rdkit_install(
         chunk_size=4096,
         file_name="Miniconda3-latest-Linux-x86_64.sh",
         url_base="https://repo.continuum.io/miniconda/",
@@ -93,7 +93,7 @@ import sys
 
 import numpy as np
 
-from rdkit import Chem
+
 
 
 def create_atoms(mol):
@@ -174,7 +174,8 @@ def dump_dictionary(dictionary, filename):
 
 if __name__ == "__main__":
 
-    install()
+    rdkit_install()
+    from rdkit import Chem
     DATASET = 'human'
     radius='2'
     ngram='3'
